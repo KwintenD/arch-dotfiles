@@ -1,5 +1,18 @@
 # Arch Linux dotfiles
 
+## Overview
+
+![Screenshot](./screenshot.png)
+
+* **Display manager:** sddm
+* **Window manager:** swayfx
+* **Locker:** ?
+* **Terminal emulator:** alacritty
+* **Shell:** zsh
+* **Bar:** waybar
+* **Launcher:** wofi
+* **Text editor:** vim (**TODO:** switch to neovim)
+
 ## SDDM display manager
 
 **Theme:** [Terminal style login](https://www.github.com/GistOfSpirit/TerminalStyleLogin)
@@ -13,16 +26,15 @@
 Current=TerminalStyleLogin
 ```
 
-## VIM text editor
+## VIM 
 
-Run the these commands to setup vim and instal `vim-plug`.
+Install vim-plug.
 
 ```
 mkdir -p ~/.vim ~/.vim/autoload ~/.vim/backup ~/.vim/colors ~/.vim/plugged &&
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-Copy the `.vimrc` file to your home directory. Or create your own vimrc file.
-When you open vim for the first time use th `:PlugInstall` command to install all your plugins from your `.vimrc` file.
+When you open vim for the first time use the `:PlugInstall` command to install all your plugins from your `.vimrc` file.
 
-- [Vimrc configuration guide](https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/)
+For more information follow this guide: [vimrc configuration guide](https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/).
