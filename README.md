@@ -13,6 +13,12 @@
 * **Launcher:** wofi
 * **Text editor:** vim (**TODO:** switch to neovim)
 
+## Dependencies
+
+```
+pacman -Sy alacritty vim sddm
+```
+
 ## SDDM display manager
 
 **Theme:** [Terminal style login](https://www.github.com/GistOfSpirit/TerminalStyleLogin)
