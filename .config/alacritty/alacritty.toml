@@ -6,4 +6,4 @@ title = "Terminal"
 
 [font]
 normal = { family = "Hack Nerd Font Mono", style = "Regular" }
-size = 8.0
+size = 12.0
