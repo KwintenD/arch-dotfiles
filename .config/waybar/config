@@ -1,0 +1,62 @@
+{
+	"modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
+	"modules-center": ["clock"],
+	"modules-right": ["backlight", "pulseaudio", "network", "battery"],
+
+	"sway/workspaces": {
+		"disable-scroll": true
+	},
+
+	"clock": {
+		"format": "{:%a, %d %b - %H:%M}",
+		"tooltip-format": "<tt><big>{calendar}</big></tt>"
+	},
+	
+	"network": {
+		"format": "{ifname} 󰌚",
+		"format-wifi": "connected {icon}",
+		"format-ethernet": "{ipaddr} 󰌗",
+		"format-disconnected": "disconnected 󰌙", //An empty format will hide the module.
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"tooltip-format": "{ifname} via {gwaddr} 󰌚\n{ipaddr}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) {icon}\n{ipaddr}",
+		"tooltip-format-ethernet": "{ifname} via {gwaddr} 󰌗\n{ipaddr}",
+		"tooltip-format-disconnected": "disconnected 󰌙",
+		"on-click": "nm-connection-editor",
+		"max-length": 50
+	},
+
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-muted": " mute 󰝟",
+		"format-icons": {
+			"headphone": "󰋋",
+			"headset": "󰋎",
+			"phone": "󰏲",
+			"portable": "󰏲",
+			"car": "󰄋",
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
+		"on-click": "pavucontrol"
+	},
+
+	"backlight": {
+		"format": "{percent}% {icon}",
+		"format-icons": ["󰽤", "󰽥", "󰽣", "󰽦", "󰽢"],
+		"on-scroll-up": "light -A 1",
+		"on-scroll-down": "light -U 1"
+	},
+
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"interval": 5,
+		"format": "{capacity}% {icon}",
+		"format-charging": "{capacity}% 󰂄",
+		"format-plugged": "{capacity}% 󰚥",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+	}
+}
