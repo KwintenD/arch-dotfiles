@@ -5,8 +5,8 @@
 ![Screenshot](./screenshot.png)
 
 * **Display manager:** sddm
-* **Window manager:** swayfx
-* **Locker:** ?
+* **Window manager:** sway
+* **Locker:** swaylock
 * **Terminal emulator:** alacritty
 * **Shell:** zsh
 * **Bar:** waybar
