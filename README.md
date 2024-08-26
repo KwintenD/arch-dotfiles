@@ -32,6 +32,14 @@ pacman -Sy alacritty vim sddm
 Current=TerminalStyleLogin
 ```
 
+## Waybar
+
+[source](https://github.com/ziap/dotfiles/tree/master)
+
+## ZSH
+
+[source](https://github.com/hgaiser/gruvbox-zsh)
+
 ## VIM 
 
 Install vim-plug.
