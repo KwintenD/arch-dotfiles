@@ -35,16 +35,24 @@
 # Defaults #
 ############
 
-set $mod Mod4
+set {
+	$mod Mod4
 
-set $left h
-set $down j
-set $up	 k
-set $right l
+	$left h
+	$down j
+	$up	 k
+	$right l
 
-set $term alacritty
-#set $lock
-#set $launcher
+	$term alacritty
+	$lock swaylock
+	$bar waybar
+	$menu rofi -show drun | swaymsg
+	$file rofi -show filebrowser | swaymsg
+	$power rofi -show powermenu | swaymsg
+	$browser firefox
+
+	$wallpaper ~/.config/sway/wallpaper.png
+}
 
 ########
 # Idle #
@@ -57,8 +65,9 @@ set $term alacritty
 default_border pixel 2
 gaps inner 2
 gaps outer 0
+smart_borders on
 
-output * bg ~/.config/sway/wallpaper.png fill
+output * bg $wallpaper fill
 
 # Colors
 # class					border	backgr.	text	indicator	child_border
@@ -90,7 +99,7 @@ bindsym $mod+a focus parent
 # Layout mode
 bindsym $mod+s layout toggle splitv splith tabbed
 # Open launcher
-bindsym $mod+d exec nwg-drawer -nofs -wm sway -pblock swaylock
+bindsym $mod+d exec $menu
 # Fullscreen
 bindsym $mod+f fullscreen
 # Floating mode
@@ -98,7 +107,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 floating_modifier $mod normal
 # Lock screen
-bindsym $mod+x exec swaylock
+bindsym $mod+x exec $lock
 
 # Brightness keys
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%- -q
@@ -141,6 +150,7 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 # Move focused window to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -152,6 +162,7 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
 
 # Resize containers:
 mode "resize" {
