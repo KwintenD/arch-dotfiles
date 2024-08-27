@@ -216,7 +216,6 @@ seat * xcursor_theme capitaine-cursors-gruvbox-white
 exec waybar &
 
 exec mako &
-exec poweralertd &
 
 ############
 # Includes #

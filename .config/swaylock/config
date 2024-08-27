@@ -1,6 +1,6 @@
 ignore-empty-password
 daemonize
-image=~/pictures/wallpapers/gruvbox-world.png
+image=~/.config/sway/wallpaper.png
 indicator-idle-visible
 clock
 datestr=
