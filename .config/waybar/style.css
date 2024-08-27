@@ -89,12 +89,21 @@ widget > * {
   }
 }
 
-#battery.critical:not(.charging) {
+#battery.warning:not(.charging):not(.plugged) {
   animation-name: blink;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#battery.critical:not(.charging):not(.plugged) {
+  animation-name: blink;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: #fb4934;
 }
 
 label:focus {

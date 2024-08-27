@@ -84,6 +84,7 @@ client.background		#ffffff
 #############
 # Start terminal
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $browser
 # Close focused window
 bindsym $mod+Shift+c kill
 # Reload sway config
@@ -117,6 +118,9 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ -q
 bindsym XF86AudioMute exec pamixer -t
 bindsym XF86AudioLowerVolume exec pamixer -d 2
 bindsym XF86AudioRaiseVolume exec pamixer -i 2
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Move focus
 bindsym $mod+$left focus left
@@ -210,6 +214,9 @@ seat * xcursor_theme capitaine-cursors-gruvbox-white
 # Waybar #
 ##########
 exec waybar &
+
+exec mako &
+exec poweralertd &
 
 ############
 # Includes #
