@@ -1,7 +1,7 @@
 {
 	"modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
 	"modules-center": ["clock"],
-	"modules-right": ["backlight", "pulseaudio", "network", "battery"],
+	"modules-right": ["temperature", "backlight", "pulseaudio", "network", "battery"],
 
 	"sway/workspaces": {
 		"disable-scroll": true
@@ -9,7 +9,18 @@
 
 	"clock": {
 		"format": "{:%a, %d %b - %H:%M}",
-		"tooltip-format": "<tt><big>{calendar}</big></tt>"
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3
+		}
+	},
+
+	"temperature": {
+		"thermal-zone": 2,
+		"format": "{temperatureC}°C {icon}",
+		"critical-threshold": 100,
+		"format-icons": ["", "", "", "", ""],
 	},
 	
 	"network": {

@@ -215,7 +215,11 @@ seat * xcursor_theme capitaine-cursors-gruvbox-white
 ##########
 exec waybar &
 
+########
+# Mako #
+########
 exec mako &
+exec notify-send "To do list:" "$(cat ~/TODO.txt)" -c todo &
 
 ############
 # Includes #

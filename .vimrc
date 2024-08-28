@@ -97,10 +97,11 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 call plug#begin('~/.vim/plugged')
 
-  Plug 'dense-analysis/ale'
-  Plug 'preservim/nerdtree'
-  Plug 'morhetz/gruvbox'
-  Plug 'xavierd/clang_complete'
+	Plug 'dense-analysis/ale'
+	Plug 'preservim/nerdtree'
+	Plug 'morhetz/gruvbox'
+	Plug 'xavierd/clang_complete'
+	Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 call plug#end()
 
@@ -219,6 +220,12 @@ if has('gui_running')
         \endif<CR>
 
 endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
+filetype plugin on
+let g:instant_markdown_theme = 'dark'
 
 " }}}
 
